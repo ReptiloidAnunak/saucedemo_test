@@ -23,6 +23,7 @@ def login_user(driver,
     pwd_unput.send_keys(password)
     sleep(1)
     login_btn.click()
+    print('✅ User logged in')
 
 
 def select_random_product(driver):
@@ -31,16 +32,12 @@ def select_random_product(driver):
 
 
     random_product = random.choice(products_cards)
-    #
-    try:
-        scroll_to_element(driver, random_product)
-        title_link = random_product.find_element(By.CLASS_NAME, 'inventory_item_name ')
-        sleep(2)
-        title_link.click()
-    except NoSuchElementException:
-        print("NoSuchElementException")
-    except Exception as e:
-        print(f"ERROR: {e}")
+
+    scroll_to_element(driver, random_product)
+    title_link = random_product.find_element(By.CLASS_NAME, 'inventory_item_name ')
+    sleep(2)
+    title_link.click()
+    print('✅ Random product selected')
 
 
 

@@ -44,7 +44,8 @@ def place_order(driver):
 
     ready_msg_element = driver.find_element(By.XPATH, '//*[@id="checkout_complete_container"]/div')
     if 'order has been dispatched' in ready_msg_element.text:
-        print(' ✅ Test passed')
+        print('✅ Order has been dispatched')
+        print('\n\n✅ Test passed')
 
     back_home_btn.click()
     sleep(2)
